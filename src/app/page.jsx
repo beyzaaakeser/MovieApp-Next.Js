@@ -2,7 +2,7 @@ import React from 'react';
 import Movies from './components/Movies';
 
 const Page = async ({ searchParams }) => {
-  console.log(searchParams.genre);
+  const params = searchParams.genre;
   const options = {
     method: 'GET',
     headers: {
@@ -11,17 +11,14 @@ const Page = async ({ searchParams }) => {
     },
   };
   const res = await fetch(
-    `https://api.themoviedb.org/3/${
-      searchParams.genre ? 'movie/' + searchParams.genre : 'trending/all/day'
-    }`,
+    `https://api.themoviedb.org/3/movie/${params}`,
     options
   );
 
   const data = await res.json();
-  console.log(data);
 
   return (
-    <div>
+    <div className="flex items-center justify-center m-auto flex-wrap gap-3  ">
       {data?.results?.map((item, index) => (
         <Movies key={index} item={item} />
       ))}
