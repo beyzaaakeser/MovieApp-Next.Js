@@ -2,7 +2,7 @@ import React from 'react';
 import Movies from './components/Movies';
 
 const Page = async ({ searchParams }) => {
-  const params = searchParams.genre;
+  const params = searchParams.genre || 'now_playing';
   const options = {
     method: 'GET',
     headers: {

@@ -21,7 +21,7 @@ const Movies = ({ item }) => {
       />
 
       <div className="absolute bottom-0 p-3 w-full h-full flex flex-col justify-end bg-gray-50/50 opacity-0 hover:opacity-100 transition-opacity ">
-        <div className="text-2xl text-amber-600 font-bold underline underline-offset-4 ">
+        <div className="text-2xl text-amber-600 font-bold underline underline-offset-4 max-w-[200px] ">
           {item?.original_title}
         </div>
         <div className=" text-gray-200 mt-2">

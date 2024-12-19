@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 
 const Header = () => {
   const [keyword, setKeyword] = useState('');
-  const router = useRouter()
+  const router = useRouter();
   const menu = [
     {
       name: 'About',
@@ -19,11 +19,12 @@ const Header = () => {
       url: '/login',
     },
   ];
-  const searchMovie = (e) => { 
-    if(e.key === "Enter" && keyword.length > 2 ) {
-      router.push(`/search/${keyword}`)
+  const searchMovie = (e) => {
+    if (e.key === 'Enter' && keyword.length > 2) {
+      router.push(`/search/${keyword}`);
+      setKeyword('');
     }
-   }
+  };
   return (
     <div className="flex items-center gap-5 h-20 p-5">
       <Link href="/" className="bg-amber-600 rounded p-3 text-2xl font-bold">
@@ -31,6 +32,7 @@ const Header = () => {
       </Link>
       <div className="flex flex-1 items-center gap-2 border p-4 rounded ">
         <input
+        value={keyword}
           onChange={(e) => setKeyword(e.target.value)}
           onKeyDown={searchMovie}
           type="text"
