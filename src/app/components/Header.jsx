@@ -26,7 +26,7 @@ const Header = () => {
     }
   };
   return (
-    <div className="flex items-center gap-5 h-20 p-5">
+    <div className="flex dark:bg-gray-800 dark:text-white items-center gap-5 h-20 p-5">
       <Link href="/" className="bg-amber-600 rounded p-3 text-2xl font-bold">
         MovieApp
       </Link>

@@ -1,32 +1,38 @@
 'use client';
+
 import { useTheme } from 'next-themes';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CiDark, CiLight } from 'react-icons/ci';
+
 const ThemeSwitcher = () => {
-  const [mounted, setMounted] = useState(false);
-  const { systemTheme, theme, setTheme } = useTheme();
+  const [isMounted, setIsMounted] = useState(false);
+  const { theme, setTheme, systemTheme } = useTheme();
+
   useEffect(() => {
-    setMounted(true);
+    setIsMounted(true);
   }, []);
-  const themeMode = theme === 'system' ? systemTheme : theme;
-  console.log(themeMode);
+
+  if (!isMounted) {
+    return null;
+  }
+
+  const currentTheme = theme === 'system' ? systemTheme : theme;
+  const isDarkMode = currentTheme === 'dark';
+
+  const toggleTheme = () => {
+    setTheme(isDarkMode ? 'light' : 'dark');
+  };
+
+  const ThemeIcon = isDarkMode ? CiLight : CiDark;
+
   return (
-    <div>
-      {mounted &&
-        (themeMode === 'dark' ? (
-          <CiLight
-            onClick={() => setTheme('light')}
-            size={25}
-            className="cursor-pointer"
-          />
-        ) : (
-          <CiDark
-            onClick={() => setTheme('dark')}
-            size={25}
-            className="cursor-pointer"
-          />
-        ))}
-    </div>
+      <button
+          onClick={toggleTheme}
+          className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          aria-label={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
+      >
+        <ThemeIcon size={25} />
+      </button>
   );
 };
 
