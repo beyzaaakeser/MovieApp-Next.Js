@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1>Movie App - NextJs & TypeScript</h1>
+I offer a modern movie platform developed with TypeScript and Next.js. This site, which provides access to the most up-to-date movie information thanks to The Movie Database (TMDB) API, has been designed with every detail in mind with a user-friendly design.
 
-## Getting Started
+There are three main categories on the home page: popular, top-rated, and upcoming movies. Movies are listed with a visual-first structure. When you hover over any movie, the movie's score, name, and release date are dynamically displayed.
 
-First, run the development server:
+When you click on any movie, you are directed to the detail page, and extended descriptions and high-quality images about the movie are presented to the user.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The advanced search bar allows users to quickly find the movies they are looking for according to the data received from TMDB.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+With the support of Next Themes, which takes the user experience to the next level, the site offers both dark mode and light mode options. This feature can be changed instantly according to user preference.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+<h2> The following technologies were used in the frontend development phase of my site: </h2>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- TypeScript & Next.Js
+- API (TMDB)
+- Next Themes
+- React-Icons
+- Tailwind Css
 
-## Learn More
+- TypeScript & Next.js: A performance-oriented, scalable, and SEO-friendly infrastructure has been provided.
 
-To learn more about Next.js, take a look at the following resources:
+- TMDB API: A powerful data source providing the most up-to-date movie data was used.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Tailwind CSS: A fast and stylish design was created.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- React Icons: Visual richness was increased by using user-friendly, impressive icons.
 
-## Deploy on Vercel
+<h2>GIF</h2>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![](/public/movieapp-gif.gif)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<h2>Main Page</h2>
+
+![](/public/1.png)
+
+![](/public/2.png)
+
+<h2>Movie Detail Page</h2>
+
+![](/public/3.png)
+
+<h2>Search Page</h2>
+
+![](/public/search.png)
